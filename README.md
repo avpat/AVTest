@@ -21,28 +21,6 @@
 
 * Backend `Laravel` Framework : `api` folder
 * Front-end Framework : `VueJS` : `front\code\public` -> please execute `yarn serve` so the frontend will be available at port 8080
-* Css Framework: bulma https://bulma.io/ 
-* The test was fun to work on. Thanks for the opportunity 
-
-<p align="center">
-    <strong>IMPORTANT: Publishing your test on a public repository would render an automatic disqualification</strong>
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <a id="the-installation"></a>
