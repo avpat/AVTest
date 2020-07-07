@@ -9,7 +9,7 @@ class FileUploadController extends Controller
     //this will have a view
     public function upload()
     {
-        dd('store is called');
+        return view('fileUpload');
     }
 
     //this will have a store function

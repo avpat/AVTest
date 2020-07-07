@@ -42,6 +42,7 @@
 
         .content {
             text-align: center;
+            width: 100%;
         }
 
         .title {
@@ -66,6 +67,7 @@
             background-color: #636b6f;
             display: flex;
             width: 50%;
+
         }
         .btn {
             padding: 10px;
