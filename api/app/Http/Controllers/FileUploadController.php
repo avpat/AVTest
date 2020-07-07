@@ -41,8 +41,8 @@ class FileUploadController extends Controller
                 ->with('file', $fileName)
                 ->with('success', 'successfully uploaded the file');
         } else {
+            //if any issue with the upload then through error
             return back()
-                ->setStatusCode('403')
                 ->with('error', 'error uploading the file');
         }
     }
