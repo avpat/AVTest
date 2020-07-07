@@ -47,7 +47,11 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
+        //storing files in the uploads folder
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path().'/files/uploads',
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
