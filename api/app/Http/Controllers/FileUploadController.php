@@ -19,7 +19,7 @@ class FileUploadController extends Controller
 
     /**
      * once the file isuploaded, store it to the database
-     * 
+     *
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|object
      */
@@ -28,7 +28,7 @@ class FileUploadController extends Controller
         //validate the request
         //assuming customer can only update .STL file
         $request->validate([
-           'file'   => 'required|mimes:STL|max:2048'
+           'file'   => 'required|mimes:STL|max:4096'
         ]);
 
         //create the filename
