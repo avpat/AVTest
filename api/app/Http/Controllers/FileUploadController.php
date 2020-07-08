@@ -29,6 +29,7 @@ class FileUploadController extends Controller
         //assuming customer can only update .STL file
         $request->validate([
            'file'   => 'required|mimes:STL|max:4096'
+           'file'   => 'required|mimes:STL,STP,IGES,PDF|max:4096'
         ]);
 
         //create the filename
