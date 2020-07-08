@@ -2,6 +2,7 @@
 /support
 /src
 /vendor
+/api/public/uploads
 .env
 Homestead.json
 Homestead.yaml
