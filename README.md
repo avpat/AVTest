@@ -10,7 +10,7 @@ TEST
 <a id="your-comments"></a>
 
 * Backend `Laravel` Framework : `api` folder
-* Front-end Framework : `VueJS` : `front\code\public` -> please execute `yarn serve` so the frontend will be available at port 8080
+* Front-end Framework : `VueJS` 
 
 
 <a id="the-installation"></a>
@@ -40,4 +40,32 @@ If you face any issue with migrate and seeding then follow these steps
 * ``composer dump-autoload``
 * ``docker-compose exec php php artisan migrate:refresh --seed``
 
-***
+**Time:*
+ 
+* I spend 1.25 hours yesterday and then stopped as I reached defined time limit. 
+* After discussion with Sam, today, I continued working on remaining part. and spend around 1.5 hours
+
+
+**Written Questions:**
+
+1. Summarise your approach, explaining any decisions and assumptions taken.
+- defined the file storage, database connections
+- followed by a basic laravel based controller to upload the files with database table to store the files
+- ASSUMPTION: the mimetypes are taken from the geomiq website
+- I encountered issue with the file size. Fixed with nginx filesize.
+- The created a component with VueJs framework and add components
+- reorganised VueJs files and moved them to resources folder.
+- tested with some examples
+
+2. How could you improve the UX of your form?
+- create a dropzone to add the files
+- validation whilst dropping the file(mimetypes)
+- validation to check of the file is repeated
+- allowing user to add multiple files
+- I would use bootstrap or bulma
+3. If given another 24 hours on this – What would you do?
+- style the form and thumbnail section
+- add unit tests
+- show success or error messages on the screen
+ 
+
