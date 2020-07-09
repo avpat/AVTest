@@ -1,22 +1,47 @@
 <template>
-    <div class="container">
-
-        <div class="row input-group">
-            <div class=" col-md-6 custom-file">
-                <input type="file" name="file" class="custom-file-input" id="inputFileUpload"
-                       v-on:change="onFileChange">
+    <div class="container is-fluid">
+        <!-- Add header -->
+        <section class="hero is-green is-small has-text-centered is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-white">Units</h1>
+                </div>
             </div>
-            <div class=" col-md-6 input-group-append">
-                <input type="submit" class="btn btn-primary" value="Upload" @click="uploadFile">
-            </div>
-        </div>
-        <div class="row">
-            <div class=" col-md-3" v-if="thumbnail">
-                <img :src="thumbnail" class="img-responsive" height="70" width="90">
-            </div>
-        </div>
-
-
+        </section>
+        <section>
+            <article class="media">
+                <div class="tile is-ancestor">
+                    <div class="tile is-4 is-vertical is-parent">
+                        <div class=" tile is-child box" v-if="thumbnail">
+                            <img :src="thumbnail" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child box">
+                            <div class="field">
+                                <div class="file is-centered is-boxed has-name media-content">
+                                    <label class="file-label">
+                                        <input type="file" name="filename" class="file-input" id="inputFileUpload"
+                                               v-on:change="onFileChange">
+                                        <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload" value="Upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Drop your files here…
+                            </span>
+                        </span>
+                                        <span class="file-name">
+                            {{filename}}
+                          </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
     </div>
 </template>
 
