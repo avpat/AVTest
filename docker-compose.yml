@@ -12,7 +12,7 @@ services:
 
   nginx:
     image: nginx:stable-alpine
-    container_name: geomiq-api
+    container_name: spareiq-api
     ports:
       - "8000:80"
     working_dir: /var/www/html
@@ -27,7 +27,7 @@ services:
 
   mysql:
     image: mysql:5.7
-    container_name: geomiq-mysql
+    container_name: spareiq-mysql
     restart: unless-stopped
     tty: true
     volumes:
@@ -36,12 +36,30 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: geomiq
-      MYSQL_USER: geomiq
-      MYSQL_PASSWORD: geomiq!
+      MYSQL_DATABASE: spareiq
+      MYSQL_USER: spareiq
+      MYSQL_PASSWORD: spareiq!
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
+
+  mysql2:
+    image: mysql:5.7
+    container_name: jobq-mysql
+    restart: unless-stopped
+    tty: true
+    volumes:
+        - ./apijobs:/var/lib/mysql
+        - ./mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_DATABASE: jobiq
+      MYSQL_USER: jobiq
+      MYSQL_PASSWORD: jobiq!
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql2
 #    networks:
 #      - laravel
 
@@ -50,7 +68,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: geomiq-php
+    container_name: spareiq-php
     restart: unless-stopped
     tty: true
     environment:
@@ -68,7 +86,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin-geomiq
+    container_name: phpmyadmin-spareiq
     ports:
     - "8085:80"
     links:
